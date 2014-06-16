@@ -3,6 +3,11 @@
 ## using cache of already calculated values
 
 
+##FYI i have included a file in the git called
+##example you can use it or your own example to
+##test the function
+
+
 ## This function is used to cache a matrix and its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -30,21 +35,22 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
+
 ## This function is used to return the inverse of a matrix
 ## either by looking it up if it is already calculated or 
 ## by calculating it
 
 cacheSolve <- function(x, ...) {
     
-    ## Returns a matrix that is the inverse of 'x'
-    
-    i <- x$getinverse()
     
     ##Returns the cached inverse if available
+    i <- x$getinverse()
+    
     if(!is.null(i)) {
         message("getting cached data")
         return(i)
     }
+    
     
     ##Calculate the inverse, set it in the cache
     ##and return it
